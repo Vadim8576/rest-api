@@ -1,11 +1,39 @@
 package apiserver
 
-type APIServer struct{}
+import (
+	"github.com/sirupsen/logrus"
+)
 
-func New() *APIServer {
-	return &APIServer{}
+type APIServer struct {
+	config *Config
+	logger *logrus.Logger
+}
+
+func New(config *Config) *APIServer {
+	return &APIServer{
+		config: config,
+		logger: logrus.New(),
+	}
 }
 
 func (s *APIServer) Start() error {
+
+	if err := s.configureLogger(); err != nil {
+		return err
+	}
+
+	s.logger.Info("starting api setver")
+
+	return nil
+}
+
+func (s *APIServer) configureLogger() error {
+	level, err := logrus.ParseLevel(s.config.LogLevel)
+	if err != nil {
+		return err
+	}
+
+	s.logger.SetLevel(level)
+
 	return nil
 }

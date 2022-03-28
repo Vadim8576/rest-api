@@ -1,5 +1,8 @@
 package main
 
+import "github.com/Vadim8576/REST-API-GO/cmd/internal/app/apiserver"
+
 func main() {
-	dd
+	s := apiserver.New()
+
 }

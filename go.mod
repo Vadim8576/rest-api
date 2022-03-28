@@ -1,4 +1,4 @@
-module github.com/Vadim8576/REST-API-GO
+module cmd/internal/app/apiserver
 
 go 1.18
 

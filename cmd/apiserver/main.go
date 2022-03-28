@@ -7,7 +7,9 @@ import (
 	"net/http"
 
 	"github.com/BurntSushi/toml"
-	"github.com/Vadim8576/REST-API-GO/cmd/internal/app/apiserver"
+	// "github.com/Vadim8576/rest-api/cmd/internal/app/apiserver"
+	// apiserver "./cmd/internal/app/apiserver"
+	apiserver "../internal/app/apiserver"
 )
 
 var (
